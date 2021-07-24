@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HaruTodo</string>
+    <string name="add_new_list">Add new list</string>
+    <string name="add_button">Add</string>
+    <string name="edit_list">Edit list</string>
+    <string name="update_button">Update</string>
+    <string name="tasks_list_title_label">Title</string>
+    <string name="tasks_list_color_label">Color</string>
+    <string name="tasks_list_icon_label">Icon</string>
+    <string name="greeting">Welcome, %1$s</string>
+    <string name="search_label">Search</string>
+    <string name="my_lists_title">My lists</string>
+</resources>
