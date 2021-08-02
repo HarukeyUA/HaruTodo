@@ -17,7 +17,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.harukeyua.harutodo.data.TasksList
 import com.harukeyua.harutodo.ui.theme.HaruTodoTheme
 import com.harukeyua.harutodo.viewModels.MainScreenViewModel
@@ -35,9 +40,35 @@ class MainActivity : ComponentActivity() {
             HaruTodoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    MainScreen()
+                    HaruTodoApp()
                 }
             }
+        }
+    }
+}
+
+@ExperimentalAnimationApi
+@ExperimentalFoundationApi
+@ExperimentalMaterialApi
+@Composable
+fun HaruTodoApp() {
+    val navController = rememberNavController()
+    HaruTodoNavHost(navController)
+}
+
+@ExperimentalMaterialApi
+@ExperimentalFoundationApi
+@ExperimentalAnimationApi
+@Composable
+fun HaruTodoNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
+    NavHost(
+        navController = navController,
+        startDestination = "ListsScreen",
+        modifier = modifier
+    ) {
+        composable("ListsScreen") {
+            val listsViewModel = hiltViewModel<MainScreenViewModel>()
+            MainScreen(listsViewModel)
         }
     }
 }
