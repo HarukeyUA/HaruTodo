@@ -242,7 +242,7 @@ fun TaskListModificationBottomSheet(
             modifier = Modifier
                 .height(4.dp)
                 .width(64.dp)
-                .background(MaterialTheme.colors.secondary, MaterialTheme.shapes.medium)
+                .background(MaterialTheme.colors.onSurface.copy(alpha = 0.1f), MaterialTheme.shapes.medium)
                 .align(Alignment.CenterHorizontally)
         )
         Spacer(modifier = Modifier.size(16.dp))
