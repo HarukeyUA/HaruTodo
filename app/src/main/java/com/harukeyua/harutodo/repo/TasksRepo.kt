@@ -2,10 +2,9 @@ package com.harukeyua.harutodo.repo
 
 import com.harukeyua.harutodo.data.TasksList
 import com.harukeyua.harutodo.db.TasksDao
-import javax.inject.Inject
 
 
-class TasksRepo @Inject constructor(private val dao: TasksDao) {
+class TasksRepo(private val dao: TasksDao) {
 
     val tasksListFlow = dao.tasksListsFlow()
 

@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.harukeyua.harutodo.R
 import com.harukeyua.harutodo.data.TasksList
 import com.harukeyua.harutodo.ui.components.AddListBottomSheet
@@ -23,12 +22,13 @@ import com.harukeyua.harutodo.ui.components.MainScreenTitle
 import com.harukeyua.harutodo.ui.components.TasksListsList
 import com.harukeyua.harutodo.viewModels.MainScreenViewModel
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.getViewModel
 
 @ExperimentalAnimationApi
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @Composable
-fun TasksListsScreen(viewModel: MainScreenViewModel = viewModel()) {
+fun TasksListsScreen(viewModel: MainScreenViewModel = getViewModel()) {
     val sheetState = rememberModalBottomSheetState(
         initialValue = ModalBottomSheetValue.Hidden
     )

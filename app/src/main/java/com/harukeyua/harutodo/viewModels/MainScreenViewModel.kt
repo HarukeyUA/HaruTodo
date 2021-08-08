@@ -7,12 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.harukeyua.harutodo.data.TasksList
 import com.harukeyua.harutodo.repo.TasksRepo
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class MainScreenViewModel @Inject constructor(private val tasksRepo: TasksRepo) : ViewModel() {
+class MainScreenViewModel(private val tasksRepo: TasksRepo) : ViewModel() {
 
     var todoListsFlow = tasksRepo.tasksListFlow
 

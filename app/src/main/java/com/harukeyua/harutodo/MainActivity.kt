@@ -5,20 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.harukeyua.harutodo.ui.screens.TasksListsScreen
 import com.harukeyua.harutodo.ui.theme.HaruTodoTheme
-import com.harukeyua.harutodo.viewModels.MainScreenViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @ExperimentalAnimationApi
     @ExperimentalFoundationApi
@@ -56,8 +54,7 @@ fun HaruTodoNavHost(navController: NavHostController, modifier: Modifier = Modif
         modifier = modifier
     ) {
         composable(MainNavigation.ListsScreen.name) {
-            val listsViewModel = hiltViewModel<MainScreenViewModel>()
-            TasksListsScreen(listsViewModel)
+            TasksListsScreen()
         }
     }
 }

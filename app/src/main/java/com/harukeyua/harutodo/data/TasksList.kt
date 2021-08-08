@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
-import com.harukeyua.harutodo.iconPickerSelection
+import com.harukeyua.harutodo.ui.components.iconPickerSelection
 
 @Entity(tableName = "tasksLists")
 data class TasksList(

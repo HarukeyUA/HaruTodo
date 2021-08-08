@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -72,10 +71,10 @@ dependencies {
 
     implementation "androidx.room:room-ktx:$room_version"
 
-    // Hilt
-    implementation "com.google.dagger:hilt-android:$hiltVersion"
-    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
-    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+    // Koin
+    def koin_version = "3.1.2"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
 
     testImplementation 'junit:junit:4.+'
